@@ -1,0 +1,10 @@
+<?xml version="1.0" standalone="yes"?>
+<DocumentElement>
+  <clientes>
+    <Nombres>1</Nombres>
+    <Apellidos>1</Apellidos>
+    <DNI>1</DNI>
+    <Fecha_x0020_de_x0020_Devolución>4/6/2023 00:00:00</Fecha_x0020_de_x0020_Devolución>
+    <Código>1</Código>
+  </clientes>
+</DocumentElement>

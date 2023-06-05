@@ -1,0 +1,19 @@
+<?xml version="1.0" standalone="yes"?>
+<DocumentElement>
+  <libros>
+    <Código>2</Código>
+    <Título>1</Título>
+    <Autor>1</Autor>
+    <Editorial>1</Editorial>
+    <Género>Ciencia Ficción</Género>
+    <Estado>disponible</Estado>
+  </libros>
+  <libros>
+    <Código>1</Código>
+    <Título>1</Título>
+    <Autor>1</Autor>
+    <Editorial>1</Editorial>
+    <Género>Autoayuda</Género>
+    <Estado>Disponible</Estado>
+  </libros>
+</DocumentElement>
