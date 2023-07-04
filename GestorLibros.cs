@@ -33,7 +33,7 @@ namespace ProyectoProductoLibros
             dtLibros.Columns.Add("Autor");
             dtLibros.Columns.Add("Editorial");
             dtLibros.Columns.Add("Género");
-            dtLibros.Columns.Add("Estado");
+            dtLibros.Columns.Add("Emisión");
 
             //Leer_DT();
             dgvLibros.DataSource = dtLibros;
@@ -54,8 +54,7 @@ namespace ProyectoProductoLibros
                 libro.Codigo = Convert.ToInt32(txtCodigo.Text);
                 libro.Titulo = txtTitulo.Text;
                 libro.Autor = txtAutor.Text;
-                libro.Editorial = txtEditorial.Text;
-                libro.Stock = Convert.ToInt32(txtCantidad.Text);
+                libro.Editorial = txtEditorial.Text;                
                 libro.Genero = cmbGenero.Items[indice].ToString();
 
                 //creacion de nuevo libro con sus atributos
@@ -70,26 +69,16 @@ namespace ProyectoProductoLibros
                 }
                 else
                 {
-                    string estado;
-                    if (libro.Stock != 0)
-                    {
-                        estado = "Disponible";
-                    }
-                    else
-                    {
-                        estado = "Prestado";
-                    }
 
                     //agregamos el nuevo libro a la lista
-                    dtLibros.Rows.Add(new object[] { libro.Codigo, libro.Titulo, libro.Autor, libro.Editorial, libro.Genero, estado });
+                    dtLibros.Rows.Add(new object[] { libro.Codigo, libro.Titulo, libro.Autor, libro.Editorial, libro.Genero});
                     //dtLibros.WriteXml(DIRECCION_XML + "librito.xml");
 
                     //limpieza de txts y cmb
                     txtCodigo.Clear();
                     txtTitulo.Clear();
                     txtAutor.Clear();
-                    txtEditorial.Clear();
-                    txtCantidad.Clear();
+                    txtEditorial.Clear();                   
                     cmbGenero.SelectedIndex = -1;
 
                 }
@@ -112,41 +101,7 @@ namespace ProyectoProductoLibros
                     //dtLibros.WriteXml(DIRECCION_XML + "librito.xml");
                 }
             }
-        }
-
-        private void btnPrestamos_Click(object sender, EventArgs e)
-        {
-            //validacion de codigo
-            if (dgvLibros.CurrentRow == null)
-            {
-                MessageBox.Show(ERROR_CODIGO_PRESTADO);
-            }
-            else
-            {
-                string disponibilidad = dgvLibros.CurrentRow.Cells[5].Value.ToString();
-
-                //abrimos el 2do form con el codigo y la disponibilidad
-                GestorPrestamo gestorPrestamos = new GestorPrestamo(dgvLibros.CurrentRow.Cells[0].Value.ToString(), disponibilidad);
-                gestorPrestamos.ShowDialog();
-
-                //cambio de la disponibilidad en caso de cambio
-                if (gestorPrestamos.bandera)
-                {
-                    string codigo = dgvLibros.CurrentRow.Cells[0].Value.ToString();
-                    string titulo = dgvLibros.CurrentRow.Cells[1].Value.ToString();
-                    string autor = dgvLibros.CurrentRow.Cells[2].Value.ToString();
-                    string editorial = dgvLibros.CurrentRow.Cells[3].Value.ToString();
-                    string genero = dgvLibros.CurrentRow.Cells[4].Value.ToString();
-                    dgvLibros.Rows.Remove(dgvLibros.CurrentRow);
-
-
-
-                    //-------------------------------------------------------------------------operador ternario
-                    dtLibros.Rows.Add(new object[] { codigo, titulo, autor, editorial, genero, disponibilidad == "Disponible" ? "Prestado" : "Disponible" });
-                    //dtLibros.WriteXml(DIRECCION_XML + "librito.xml");
-                }
-            }
-        }
+        }        
 
         //filtros para buscar libros
         private void txtFiltrarTitulo_TextChanged_1(object sender, EventArgs e)

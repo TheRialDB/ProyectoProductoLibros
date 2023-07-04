@@ -43,8 +43,6 @@
             this.txtEditorial = new System.Windows.Forms.TextBox();
             this.cmbGenero = new System.Windows.Forms.ComboBox();
             this.btnBorrar = new System.Windows.Forms.Button();
-            this.lblCantidad = new System.Windows.Forms.Label();
-            this.txtCantidad = new System.Windows.Forms.TextBox();
             this.txtFiltrarGenero = new System.Windows.Forms.TextBox();
             this.lblFiltroGenero = new System.Windows.Forms.Label();
             this.txtFiltrarCodigo = new System.Windows.Forms.TextBox();
@@ -55,7 +53,8 @@
             this.txtFiltrarAutor = new System.Windows.Forms.TextBox();
             this.txtFiltrarTitulo = new System.Windows.Forms.TextBox();
             this.lblFiltroTitulo = new System.Windows.Forms.Label();
-            this.btnPrestamos = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLibros)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.epvTextos)).BeginInit();
             this.SuspendLayout();
@@ -94,7 +93,7 @@
             // 
             this.lblGenero.AutoSize = true;
             this.lblGenero.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGenero.Location = new System.Drawing.Point(17, 156);
+            this.lblGenero.Location = new System.Drawing.Point(17, 130);
             this.lblGenero.Name = "lblGenero";
             this.lblGenero.Size = new System.Drawing.Size(42, 13);
             this.lblGenero.TabIndex = 3;
@@ -116,7 +115,7 @@
             this.dgvLibros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvLibros.Location = new System.Drawing.Point(208, 23);
             this.dgvLibros.Name = "dgvLibros";
-            this.dgvLibros.Size = new System.Drawing.Size(638, 376);
+            this.dgvLibros.Size = new System.Drawing.Size(736, 353);
             this.dgvLibros.TabIndex = 5;
             // 
             // epvTextos
@@ -127,7 +126,7 @@
             // btnCargar
             // 
             this.btnCargar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCargar.Location = new System.Drawing.Point(12, 180);
+            this.btnCargar.Location = new System.Drawing.Point(20, 203);
             this.btnCargar.Name = "btnCargar";
             this.btnCargar.Size = new System.Drawing.Size(75, 23);
             this.btnCargar.TabIndex = 6;
@@ -176,7 +175,7 @@
             "Educativos",
             "Cocina",
             "Otro"});
-            this.cmbGenero.Location = new System.Drawing.Point(102, 153);
+            this.cmbGenero.Location = new System.Drawing.Point(102, 127);
             this.cmbGenero.Name = "cmbGenero";
             this.cmbGenero.Size = new System.Drawing.Size(100, 21);
             this.cmbGenero.TabIndex = 11;
@@ -184,30 +183,13 @@
             // btnBorrar
             // 
             this.btnBorrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBorrar.Location = new System.Drawing.Point(127, 180);
+            this.btnBorrar.Location = new System.Drawing.Point(127, 203);
             this.btnBorrar.Name = "btnBorrar";
             this.btnBorrar.Size = new System.Drawing.Size(75, 23);
             this.btnBorrar.TabIndex = 12;
             this.btnBorrar.Text = "Borrar";
             this.btnBorrar.UseVisualStyleBackColor = true;
             this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
-            // 
-            // lblCantidad
-            // 
-            this.lblCantidad.AutoSize = true;
-            this.lblCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCantidad.Location = new System.Drawing.Point(17, 130);
-            this.lblCantidad.Name = "lblCantidad";
-            this.lblCantidad.Size = new System.Drawing.Size(49, 13);
-            this.lblCantidad.TabIndex = 13;
-            this.lblCantidad.Text = "Cantidad";
-            // 
-            // txtCantidad
-            // 
-            this.txtCantidad.Location = new System.Drawing.Point(102, 127);
-            this.txtCantidad.Name = "txtCantidad";
-            this.txtCantidad.Size = new System.Drawing.Size(100, 20);
-            this.txtCantidad.TabIndex = 14;
             // 
             // txtFiltrarGenero
             // 
@@ -294,24 +276,31 @@
             this.lblFiltroTitulo.TabIndex = 51;
             this.lblFiltroTitulo.Text = "Filtrar Título";
             // 
-            // btnPrestamos
+            // label1
             // 
-            this.btnPrestamos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrestamos.Location = new System.Drawing.Point(688, 415);
-            this.btnPrestamos.Name = "btnPrestamos";
-            this.btnPrestamos.Size = new System.Drawing.Size(158, 23);
-            this.btnPrestamos.TabIndex = 61;
-            this.btnPrestamos.Text = "Prestamos/Devoluciones";
-            this.btnPrestamos.UseVisualStyleBackColor = true;
-            this.btnPrestamos.Click += new System.EventHandler(this.btnPrestamos_Click);
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(17, 161);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(91, 13);
+            this.label1.TabIndex = 61;
+            this.label1.Text = "Fecha de Emisión";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(20, 177);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(182, 20);
+            this.dateTimePicker1.TabIndex = 62;
             // 
             // GestorLibros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.ClientSize = new System.Drawing.Size(858, 450);
-            this.Controls.Add(this.btnPrestamos);
+            this.ClientSize = new System.Drawing.Size(956, 450);
+            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.txtFiltrarGenero);
             this.Controls.Add(this.lblFiltroGenero);
             this.Controls.Add(this.txtFiltrarCodigo);
@@ -322,8 +311,6 @@
             this.Controls.Add(this.txtFiltrarAutor);
             this.Controls.Add(this.txtFiltrarTitulo);
             this.Controls.Add(this.lblFiltroTitulo);
-            this.Controls.Add(this.txtCantidad);
-            this.Controls.Add(this.lblCantidad);
             this.Controls.Add(this.btnBorrar);
             this.Controls.Add(this.cmbGenero);
             this.Controls.Add(this.txtEditorial);
@@ -361,8 +348,6 @@
         private System.Windows.Forms.TextBox txtTitulo;
         private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.Button btnCargar;
-        private System.Windows.Forms.TextBox txtCantidad;
-        private System.Windows.Forms.Label lblCantidad;
         private System.Windows.Forms.Button btnBorrar;
         private System.Windows.Forms.TextBox txtFiltrarGenero;
         private System.Windows.Forms.Label lblFiltroGenero;
@@ -374,7 +359,8 @@
         private System.Windows.Forms.TextBox txtFiltrarAutor;
         private System.Windows.Forms.TextBox txtFiltrarTitulo;
         private System.Windows.Forms.Label lblFiltroTitulo;
-        private System.Windows.Forms.Button btnPrestamos;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Label label1;
     }
 }
 

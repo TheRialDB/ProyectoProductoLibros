@@ -14,11 +14,8 @@ namespace Clases
         private string titulo;
         private string autor;
         private string editorial;
-        private string genero;
-        private int stock;
-        private bool prestado;
-        private DateTime fechaPrestamo;
-        private DateTime fechaDevolucion;
+        private string genero;        
+        private DateTime fechaEmision;       
 
         //constructor vacio
         public Libro()
@@ -26,18 +23,14 @@ namespace Clases
 
         }
 
-        public Libro(int codigo, string titulo, string autor, string editorial, string genero, int cantidad)
+        public Libro(int codigo, string titulo, string autor, string editorial, string genero)
         {
             this.codigo = codigo;
             this.titulo = titulo;
             this.autor = autor;
             this.editorial = editorial;
             this.genero = genero;
-            this.stock = cantidad;
-            if (stock == 0)
-            {
-                this.prestado = true;
-            }
+            
         }
 
         //getters y setters
@@ -45,11 +38,8 @@ namespace Clases
         public string Titulo { get; set; }
         public string Autor { get; set; }
         public string Editorial { get; set; }
-        public string Genero { get; set; }
-        public int Stock { get; set; }
-        public bool Prestado { get; set; }
-        public DateTime FechaPrestamo { get; set; }
-        public DateTime FechaDevolucion { get; set; }
+        public string Genero { get; set; }        
+        public DateTime FechaEmision { get; set; }
 
     }
 }
