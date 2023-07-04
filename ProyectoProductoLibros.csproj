@@ -80,6 +80,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="CapaNegocios\CapaNegocios.csproj">
+      <Project>{38CA288E-BB87-46AE-87C9-097F2EA12ACB}</Project>
+      <Name>CapaNegocios</Name>
+    </ProjectReference>
     <ProjectReference Include="Clases\Clases.csproj">
       <Project>{9a4efd94-f624-4fda-b393-a1c4106e0f29}</Project>
       <Name>Clases</Name>
