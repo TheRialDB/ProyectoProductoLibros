@@ -11,12 +11,7 @@ namespace CapaDatos
 {
     public class AdminLibros : DatosConexion
     {
-        //public int abmLibros(string accion, Libro libro) 
-        //{
-        //    int resultado = -1;
-        //    string orden = string.Empty;
-
-        //}
+     
         public int abmLibros(string accion, Libro objLibro)
         {
             int resultado = -1; //Controlar que se realice la operacion con exito.
